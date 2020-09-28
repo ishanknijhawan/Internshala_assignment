@@ -1,2 +1,2 @@
 # Internshala_assignment
-Notes app with local authentication using google+ and SQLite storage
+Notes app with google login and local storage using SQLite room.
