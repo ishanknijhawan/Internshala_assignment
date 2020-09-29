@@ -14,8 +14,9 @@
 
     <com.google.android.material.button.MaterialButton
         android:layout_width="wrap_content"
-        android:text="Login"
+        android:text="Sign in"
         android:textAllCaps="false"
+        android:id="@+id/btn_sign_in"
         android:layout_centerInParent="true"
         app:icon="@drawable/ic_google_plus"
         app:iconPadding="24dp"

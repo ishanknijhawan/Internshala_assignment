@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.AddEditNoteFragment">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:layout_width="match_parent"
+        android:id="@+id/toolbarAddEdit"
+        android:layout_height="?attr/actionBarSize">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="4dp"
+                android:id="@+id/iv_back"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_baseline_arrow_back_24"
+                android:layout_height="wrap_content"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="16dp"
+                android:text="Save"
+                android:id="@+id/btn_save_note"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_centerVertical="true"
+                android:textAllCaps="false"
+                app:icon="@drawable/ic_baseline_check_24"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <EditText
+        android:id="@+id/et_note_title"
+        android:layout_width="match_parent"
+        android:layout_below="@id/toolbarAddEdit"
+        android:hint="Title"
+        android:textSize="25dp"
+        android:background="@android:color/transparent"
+        android:layout_margin="16dp"
+        android:inputType="text"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/et_note_desc"
+        android:layout_width="match_parent"
+        android:layout_below="@id/et_note_title"
+        android:hint="Write your note here"
+        android:textSize="20dp"
+        android:background="@android:color/transparent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:inputType="textMultiLine"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>
