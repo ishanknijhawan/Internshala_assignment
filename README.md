@@ -1,7 +1,7 @@
 # Internshala_assignment
 Notes app with google login and local storage using SQLite room.
 
-Download the app from [here](https://drive.google.com/file/d/1yMy1nFsNk07PxKi1vPuyg8l7d9eOU8WR/view?usp=sharing)
+Download the app from [here](https://drive.google.com/file/d/1QhfYpYJPqc9SaOJe2nkW0wCVTiVO-utM/view?usp=sharing)
 
 Features
 - Authentication is done through Google login APi

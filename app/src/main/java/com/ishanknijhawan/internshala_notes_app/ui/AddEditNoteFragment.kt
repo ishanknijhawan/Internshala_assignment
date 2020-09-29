@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
@@ -42,7 +43,7 @@ class AddEditNoteFragment : Fragment() {
         action = arguments?.getString("action")!!
         updatedNote = (arguments?.getSerializable("note") as Note?)!!
 
-        if (action == "edit"){
+        if (action == "edit") {
             btn_save_note.text = "Update"
             et_note_title?.setText(updatedNote.title)
             et_note_desc?.setText(updatedNote.description)
@@ -71,11 +72,9 @@ class AddEditNoteFragment : Fragment() {
         val noteTitle = et_note_title?.text.toString()
         val noteDesc = et_note_desc?.text.toString()
         when {
-            et_note_desc?.text!!.isEmpty() and et_note_title?.text!!.isEmpty() -> {
-                mView.findNavController().popBackStack()
-            }
-            (noteTitle == updatedNote.title) and (noteDesc == updatedNote.description) -> {
-                mView.findNavController().popBackStack()
+            (et_note_desc?.text!!.isEmpty() and et_note_title?.text!!.isEmpty())
+                    or ((noteTitle == updatedNote.title) and (noteDesc == updatedNote.description)) -> {
+                goToMainFragment()
             }
             else -> {
                 MaterialAlertDialogBuilder(requireContext())
@@ -106,7 +105,7 @@ class AddEditNoteFragment : Fragment() {
         if (noteTitle.isEmpty() and noteDesc.isEmpty()) {
             Toast.makeText(requireContext(), "Empty note discarded", Toast.LENGTH_SHORT).show()
         } else {
-            if (action == "edit"){
+            if (action == "edit") {
                 updatedNote.title = noteTitle
                 updatedNote.description = noteDesc
                 mainFragmentViewModel.updateNote(updatedNote)
@@ -114,6 +113,12 @@ class AddEditNoteFragment : Fragment() {
                 mainFragmentViewModel.insertNote(note)
             }
         }
-        mView.findNavController().popBackStack()
+        goToMainFragment()
+    }
+
+    private fun goToMainFragment() {
+        val bundle = bundleOf("email" to userEmail)
+        mView.findNavController().navigate(R.id.action_addEditNoteFragment_to_notesFragment, bundle)
+        //mView.findNavController().popBackStack()
     }
 }

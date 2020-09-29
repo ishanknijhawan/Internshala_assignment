@@ -30,6 +30,10 @@
         android:id="@+id/addEditNoteFragment"
         android:name="com.ishanknijhawan.internshala_notes_app.ui.AddEditNoteFragment"
         android:label="fragment_add_edit_note"
-        tools:layout="@layout/fragment_add_edit_note"/>
+        tools:layout="@layout/fragment_add_edit_note">
+        <action
+            android:id="@+id/action_addEditNoteFragment_to_notesFragment"
+            app:destination="@id/notesFragment" />
+    </fragment>
 
 </navigation>

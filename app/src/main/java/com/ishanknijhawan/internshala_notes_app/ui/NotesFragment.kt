@@ -70,6 +70,7 @@ class NotesFragment : Fragment(), OnItemClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        Log.d("CHECK", "coming here")
         mView = view
         userEmail = arguments?.getString("email")!!
         tv_email_title.text = userEmail
