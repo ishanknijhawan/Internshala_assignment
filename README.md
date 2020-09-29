@@ -3,6 +3,12 @@ Notes app with google login and local storage using SQLite room.
 
 Download the app from [here](https://drive.google.com/file/d/1ViqlOGropJx9X515SppjoP_SYlI7nAf-/view?usp=sharing)
 
+Features
+- Authentication is done through Google login APi
+- Notes are locally stored using SQLite Room ORM
+- Notes' lifecycle is managed using ViewModel architecture and LiveData
+- Dark Theme and layout preferences are persisted using Shared preferences
+
 | Login Screen                                                                                                                          | Google login                                                                                                                          | Notes Screen                                                                                                                            |
 | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
 | <img src="https://user-images.githubusercontent.com/45118110/94542533-8b2f8880-0266-11eb-9d9a-44a6f4aa04a2.jpeg" style="zoom:25%;" /> | <img src="https://user-images.githubusercontent.com/45118110/94542549-8f5ba600-0266-11eb-9bbf-eda18536d854.jpeg" style="zoom:25%;" /> | <img src="https://user-images.githubusercontent.com/45118110/94542570-95ea1d80-0266-11eb-9489-afdf1132d7bb.jpeg" style="zoom:25%;" /> |
