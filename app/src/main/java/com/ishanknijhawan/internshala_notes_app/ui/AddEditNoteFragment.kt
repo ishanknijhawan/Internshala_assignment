@@ -68,21 +68,29 @@ class AddEditNoteFragment : Fragment() {
     }
 
     private fun handleBackButton() {
-        if (et_note_desc.text.isEmpty() and et_note_title.text.isEmpty()) {
-            mView.findNavController().popBackStack()
-        } else {
-            MaterialAlertDialogBuilder(requireContext())
-                .setTitle("Save Note ?")
-                .setMessage("Do you want to save this note ?")
-                .setNegativeButton(resources.getString(R.string.decline)) { dialog, which ->
-                    dialog.dismiss()
-                    mView.findNavController().popBackStack()
-                }
-                .setPositiveButton(resources.getString(R.string.accept)) { dialog, which ->
-                    dialog.dismiss()
-                    saveNote()
-                }
-                .show()
+        val noteTitle = et_note_title.text.toString()
+        val noteDesc = et_note_desc.text.toString()
+        when {
+            et_note_desc.text.isEmpty() and et_note_title.text.isEmpty() -> {
+                mView.findNavController().popBackStack()
+            }
+            (noteTitle == updatedNote.title) and (noteDesc == updatedNote.description) -> {
+                mView.findNavController().popBackStack()
+            }
+            else -> {
+                MaterialAlertDialogBuilder(requireContext())
+                    .setTitle("Save Note ?")
+                    .setMessage("Do you want to save this note ?")
+                    .setNegativeButton(resources.getString(R.string.decline)) { dialog, which ->
+                        dialog.dismiss()
+                        mView.findNavController().popBackStack()
+                    }
+                    .setPositiveButton(resources.getString(R.string.accept)) { dialog, which ->
+                        dialog.dismiss()
+                        saveNote()
+                    }
+                    .show()
+            }
         }
     }
 
