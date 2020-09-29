@@ -25,12 +25,12 @@ class NoteAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        if (items[position].title.isEmpty()) {
-            holder.tvTitleView.visibility = View.GONE
-        }
-        if (items[position].description.isEmpty()) {
-            holder.tvNoteView.visibility = View.GONE
-        }
+//        if (items[position].title.isEmpty()) {
+//            holder.tvTitleView.visibility = View.GONE
+//        }
+//        if (items[position].description.isEmpty()) {
+//            holder.tvNoteView.visibility = View.GONE
+//        }
         holder.tvTitleView.text = items[position].title
         holder.tvNoteView.text = items[position].description
         holder.setOnClick(itemClickListener, position)
