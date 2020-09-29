@@ -7,6 +7,7 @@ Features
 - Authentication is done through Google login APi
 - Notes are locally stored using SQLite Room ORM
 - Notes' lifecycle is managed using ViewModel architecture and LiveData
+- Single activity app and fragment navigation is handled by Android Navigation component
 - Dark Theme and layout preferences are persisted using Shared preferences
 
 | Login Screen                                                                                                                          | Google login                                                                                                                          | Notes Screen                                                                                                                            |
