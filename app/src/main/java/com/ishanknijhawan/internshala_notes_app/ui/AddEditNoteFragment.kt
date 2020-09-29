@@ -44,8 +44,8 @@ class AddEditNoteFragment : Fragment() {
 
         if (action == "edit"){
             btn_save_note.text = "Update"
-            et_note_title.setText(updatedNote.title)
-            et_note_desc.setText(updatedNote.description)
+            et_note_title?.setText(updatedNote.title)
+            et_note_desc?.setText(updatedNote.description)
         } else {
             btn_save_note.text = "Save"
         }
@@ -68,10 +68,10 @@ class AddEditNoteFragment : Fragment() {
     }
 
     private fun handleBackButton() {
-        val noteTitle = et_note_title.text.toString()
-        val noteDesc = et_note_desc.text.toString()
+        val noteTitle = et_note_title?.text.toString()
+        val noteDesc = et_note_desc?.text.toString()
         when {
-            et_note_desc.text.isEmpty() and et_note_title.text.isEmpty() -> {
+            et_note_desc?.text!!.isEmpty() and et_note_title?.text!!.isEmpty() -> {
                 mView.findNavController().popBackStack()
             }
             (noteTitle == updatedNote.title) and (noteDesc == updatedNote.description) -> {
@@ -95,8 +95,8 @@ class AddEditNoteFragment : Fragment() {
     }
 
     private fun saveNote() {
-        val noteTitle = et_note_title.text.toString()
-        val noteDesc = et_note_desc.text.toString()
+        val noteTitle = et_note_title?.text.toString()
+        val noteDesc = et_note_desc?.text.toString()
         val note = Note(
             title = noteTitle,
             description = noteDesc,

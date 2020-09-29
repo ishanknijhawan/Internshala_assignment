@@ -51,17 +51,23 @@
         android:inputType="text"
         android:layout_height="wrap_content"/>
 
-    <EditText
-        android:id="@+id/et_note_desc"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_below="@id/et_note_title"
-        android:hint="Write your note here"
-        android:textSize="20dp"
-        android:background="@android:color/transparent"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="8dp"
-        android:inputType="textMultiLine"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/et_note_desc"
+            android:layout_width="match_parent"
+            android:hint="Write your note here"
+            android:textSize="20dp"
+            android:background="@android:color/transparent"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="8dp"
+            android:inputType="textMultiLine"
+            android:layout_height="wrap_content"/>
+
+    </androidx.core.widget.NestedScrollView>
 
 </RelativeLayout>

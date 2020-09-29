@@ -14,6 +14,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import android.widget.Toolbar
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.os.bundleOf
 import androidx.lifecycle.LiveData
@@ -123,6 +124,14 @@ class NotesFragment : Fragment(), OnItemClickListener {
             AddEditNoteFragment().arguments = bundle
             mView.findNavController().navigate(R.id.action_notesFragment_to_addEditNoteFragment, bundle)
         }
+
+        val callback: OnBackPressedCallback =
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    requireActivity().finish()
+                }
+            }
+        requireActivity().onBackPressedDispatcher.addCallback(requireActivity(), callback)
     }
 
     private fun changeLayout() {
